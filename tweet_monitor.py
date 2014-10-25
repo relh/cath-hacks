@@ -1,14 +1,17 @@
 import os
 import sys
 import time
- 
+from Queue import Queue
+
 globals()['last_time'] = 0
- 
+globals()['queue_size'] = 10000		#tinker with this
+globals()['queue'] = Queue(globals()['queue_size'])
 if len(sys.argv)!=5:
  print 'Please run with consumer_key, consumer_secret, access_token, access_token_secret!'
  sys.exit(-1)
   
 import json
+import threading
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
@@ -32,22 +35,30 @@ class StdOutListener(StreamListener):
   if time.time() - globals()['last_time'] < 120:
    print 'Still waiting...'
    return True
-  tweet_id = str(json.loads(data)['id'])
-  cb1 = cleverbot.Cleverbot()
-  our_tweet = '@' + json.loads(data)['user']['screen_name'] + ' ' + cb1.ask(clean(json.loads(data)['text']))
-  api_object.update_status(status = our_tweet)
-  print json.loads(data)['text']
-  print "WE TWEETED:"
-  print our_tweet
-  print '\n\n'
+   decoded = json.loads(data)
+   #push onto end of queue
   globals()['last_time'] = time.time()
   return True
  def on_error(self, status):
   print status
- 
-l = StdOutListener()
-auth = OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api_object = API(auth)
-stream = Stream(auth, l)
-stream.filter(track=[str(raw_input('What keyword should we troll? '))])
+
+#--- start threads
+#thread #1: streams tweets into queue
+#thread #2: removes tweets from the bottom of the queue
+#thread #3: periodically analyzes queue - looks for news
+
+def stream_thread():
+ l = StdOutListener()
+ auth = OAuthHandler(consumer_key, consumer_secret)
+ auth.set_access_token(access_token, access_token_secret)
+ api_object = API(auth)
+ stream = Stream(auth, l)
+
+def remove_thread():
+ #remove old tweets
+ return
+
+def analysis_thread():
+ #analyze current queue
+ return
+
