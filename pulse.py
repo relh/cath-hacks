@@ -1,4 +1,4 @@
-#from analyze import find_event?
+from analyze import analyze, trigger
 
 def clean(STRING):
     return (''.join([c for c in STRING if c.lower() in 'abcdefghijklmnopqrstuvwxyz ']))[:100]
