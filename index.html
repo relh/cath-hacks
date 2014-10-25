@@ -1,38 +1,56 @@
+<!DOCTYPE html>
 <html>
+  <head>
+	<script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple map</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
 
-<head>
-  <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-</head>
+function initialize() {
+	var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
 
-<body>
-  <header> Tweets </header>
-  <div class="tweets">
-  </div>
+  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+  var mapOptions = {
+    zoom: 4,
+    center: myLatlng
+  };
 
-  <script>
-$(document).ready(function() {
-var myFirebase = new Firebase("https://hacknc-pulse-1.firebaseio.com/");
-myFirebase.limit(10).on("child_added", function(snapshot){
-  var data = snapshot.val();
-/*
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function(){
-    var jsonresponse = this.responseText;
-    var inlinehtml = (JSON.parse(jsonresponse))["html"];
-    $(".tweets").append(inlinehtml);
-  }
-  xhr.error = function(){
-    alert("ERROR!");
-    debugger;
-  }
-  xhr.open("GET", "https://api.twitter.com/1/statuses/oembed.json?id="+data,true);
-  xhr.send(null);
-*/
-  $(".tweets").append(data);
-});
-});
-  </script>
-</body>
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+  var contentString = 'whater lol';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'TWITERT THINGS'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
 </html>
+
+
+
