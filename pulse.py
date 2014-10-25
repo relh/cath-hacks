@@ -9,11 +9,7 @@ def tidapiobj_to_html(tweetid, apiobject):
 
 #---streams tweets into queue
 def stream_thread(queue):
-    l = StdOutListener()
-    auth = OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
-    api_object = API(auth)
-    stream = Stream(auth, l)
+    return
 
 #---removes tweets from the bottom of the queue
 def remove_thread(queue):
