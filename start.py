@@ -1,4 +1,4 @@
-from Queue import Queue
+from Queue import PriorityQueue
 from threading import Threading
 import datetime
 import time
@@ -7,11 +7,12 @@ import sys
 import pulse
 
 def __main__():
-    q = Queue(10000)	#tinker with the size
-    producer = Thread(Target=pulse.stream_thread, (args=q,))
+    q = PriorityQueue()	#elements will be a tuple (-1*time, [tweet])
+
+    #producer = Thread(Target=pulse.stream_thread, (args=q,))
     consumer = Thread(Target=pulse.remove_thread, (args=q,))
     #analyzer = Thread(Target=pulse.analysis_thread, (args=q,))
 
-    producer.start()
+    #producer.start()
     consumer.start()
     #analyzer.start()

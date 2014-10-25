@@ -1,4 +1,5 @@
 from analyze import analyze, trigger
+import time
 
 def clean(STRING):
     return (''.join([c for c in STRING if c.lower() in 'abcdefghijklmnopqrstuvwxyz ']))[:100]
@@ -13,11 +14,22 @@ def stream_thread(queue):
 
 #---removes tweets from the bottom of the queue
 def remove_thread(queue):
-    #remove old tweets
+    time = time.time() * -1
+    try:
+	(t_time, tweet) = queue.get()
+        while t_time - time > 60*15:
+	    (t_time, tweet) = queue.get()
+
+    except Queue.Empty:
+	return
+
     return
 
 #---analyzes queue for news events
 def analysis_thread(queue):
     #analyze current queue
+    event = analyze(queue)
+    if event:
+	trigger(event)
     return
 
