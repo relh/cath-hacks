@@ -1,4 +1,4 @@
-from pulse_helper import analyze, trigger
+from analyze import analyze, trigger
 
 #---needs to be tested!
 def tidapiobj_to_html(tweetid, apiobject):
