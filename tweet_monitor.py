@@ -42,29 +42,6 @@ class StdOutListener(StreamListener):
  def on_error(self, status):
   print status
 
-#thread #1: streams tweets into queue
-#thread #2: removes tweets from the bottom of the queue
-#thread #3: periodically analyzes queue - looks for news
-
-# NEEDS TO BE TESTED!
-def tidapiobj_to_html(tweetid, apiobject):
- return json.loads(apiobject.get_oembed(id=tweetid))['html']
-
-def stream_thread(queue):
- l = StdOutListener()
- auth = OAuthHandler(consumer_key, consumer_secret)
- auth.set_access_token(access_token, access_token_secret)
- api_object = API(auth)
- stream = Stream(auth, l)
-
-def remove_thread(queue):
- #remove old tweets
- return
-
-def analysis_thread(queue):
- #analyze current queue
- return
-
 #---start threads
 feeder = Thread(Target=stream_thread, args=(queue,))
 consumer = Thread(Target=remove_thread, args=(queue,))
