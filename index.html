@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <header> Tweets </header>
+  <div class="tweets">
+  </div>
+
+  <script>
+$(document).ready(function() {
+var myFirebase = new Firebase("https://hacknc-pulse-1.firebaseio.com/");
+myFirebase.limit(10).on("child_added", function(snapshot){
+  var data = snapshot.val();
+/*
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    var jsonresponse = this.responseText;
+    var inlinehtml = (JSON.parse(jsonresponse))["html"];
+    $(".tweets").append(inlinehtml);
+  }
+  xhr.error = function(){
+    alert("ERROR!");
+    debugger;
+  }
+  xhr.open("GET", "https://api.twitter.com/1/statuses/oembed.json?id="+data,true);
+  xhr.send(null);
+*/
+  $(".tweets").append(data);
+});
+});
+  </script>
+</body>
+
+</html>
