@@ -46,6 +46,10 @@ class StdOutListener(StreamListener):
 #thread #2: removes tweets from the bottom of the queue
 #thread #3: periodically analyzes queue - looks for news
 
+# NEEDS TO BE TESTED!
+def tidapiobj_to_html(tweetid, apiobject):
+ return json.loads(apiobject.get_oembed(id=tweetid))['html']
+
 def stream_thread(queue):
  l = StdOutListener()
  auth = OAuthHandler(consumer_key, consumer_secret)
