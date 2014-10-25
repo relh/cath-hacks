@@ -44,4 +44,4 @@ class Canary:
         self.stream.disconnect()
 
 # comment this out in prod
-printHelp()
+# printHelp()

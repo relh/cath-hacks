@@ -1,6 +1,6 @@
 import os
 from Queue import Queue
-from threading import Threading
+from threading import Thread
 import datetime
 import time
 import sys
