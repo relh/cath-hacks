@@ -27,9 +27,6 @@ consumer_secret=sys.argv[2]
 access_token=sys.argv[3]
 access_token_secret=sys.argv[4]
  
-def clean(STRING):
-    return (''.join([c for c in STRING if c.lower() in 'abcdefghijklmnopqrstuvwxyz ']))[:100]
- 
 class StdOutListener(StreamListener):
     def on_data(self, data):
         decoded = json.loads(data)

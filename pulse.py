@@ -1,5 +1,8 @@
 from analyze import analyze, trigger
 
+def clean(STRING):
+    return (''.join([c for c in STRING if c.lower() in 'abcdefghijklmnopqrstuvwxyz ']))[:100]
+
 #---needs to be tested!
 def tidapiobj_to_html(tweetid, apiobject):
     return json.loads(apiobject.get_oembed(id=tweetid))['html']
