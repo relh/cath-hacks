@@ -1,4 +1,17 @@
-from pulse_helper import analyze, trigger
+#from analyze import find_event?
+
+class Tweet():
+    info = {} 	#fields: latlong, text, id, timestamp
+    def init(self, data):
+	decoded = json.loads(data)
+	info['latlong'] = decoded[]
+	info['text'] = clean(decoded[])
+	info['id'] = decoded[]
+	info['timestamp'] = decoded[]
+	
+def clean(STRING):
+    return (''.join([c for c in STRING if c.lower() in 'abcdefghijklmnopqrstuvwxyz ']))[:100]
+
 
 #---needs to be tested!
 def tidapiobj_to_html(tweetid, apiobject):
