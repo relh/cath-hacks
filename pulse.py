@@ -1,4 +1,3 @@
-# analyze and trigger must be blocking calls
 import analyze
 import canary
 import time
@@ -26,10 +25,8 @@ def operate(queue):
         time.sleep(0.25)
         #analyze current queue
         try:
-            print 'sent to analyze'
             analyze.analyze(copy.copy(map(lambda x:x[1],queue.queue)))
         except Exception,e:
-            print 'whoa not analyzed'
             print str(e)
             pass # BAD!
 
@@ -53,8 +50,6 @@ class Pulse:
             try:
                 timestamp = time.time()
                 twit = json.loads(data)
-                print 'THIS IS OUR TWIT:'
-                print twit
                 try:
                     tweet = {}
                     tweet['timestamp'] = timestamp
@@ -63,10 +58,8 @@ class Pulse:
                     tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
                     self.canary.queue.put((0-timestamp, tweet))
                 except Exception,e:
-                    print "LOLWAT"
                     print str(e)
             except Exception,e:
-                print 'EXCEPTION!'
                 print str(e)
         self.canary.onData = onData
         self.canary.startStream(self.geotags)#may not work???
