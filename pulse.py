@@ -27,7 +27,10 @@ def analysis_thread(queue):
     while True:
         time.sleep(0.25)
         #analyze current queue
-        event = analyze(queue)
+        try:
+            event = analyze(queue)
+        except:
+            pass # BAD!
         if event:
             trigger(event)
 
