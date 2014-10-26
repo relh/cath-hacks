@@ -1,0 +1,61 @@
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 23, 19, 26, 55), 'latlong': None, 'id': 525367786655449089}, {'timestamp': datetime.datetime(2014, 10, 23, 19, 32, 29), 'latlong': None, 'id': 525369184822509568}, {'timestamp': datetime.datetime(2014, 10, 23, 19, 34, 12), 'latlong': None, 'id': 525369617905364994}, {'timestamp': datetime.datetime(2014, 10, 23, 19, 38, 51), 'latlong': None, 'id': 525370787055030272}, {'timestamp': datetime.datetime(2014, 10, 23, 19, 40, 32), 'latlong': {u'type': u'Point', u'coordinates': [-122.3402003, 47.669341]}, 'id': 525371211690545152}], 'keywords': [u'game']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 23, 20, 18, 24), 'latlong': None, 'id': 525380740541087745}, {'timestamp': datetime.datetime(2014, 10, 23, 20, 18, 33), 'latlong': None, 'id': 525380780101738496}], 'keywords': [u'bkhighfive']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 23, 21, 45, 47), 'latlong': None, 'id': 525402731516022785}], 'keywords': [u'scarecrow']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 0, 29, 30), 'latlong': None, 'id': 525443934399766529}, {'timestamp': datetime.datetime(2014, 10, 24, 0, 31, 6), 'latlong': None, 'id': 525444337447215107}, {'timestamp': datetime.datetime(2014, 10, 24, 0, 33, 14), 'latlong': {u'type': u'Point', u'coordinates': [-122.3550472, 47.7946567]}, 'id': 525444873626071040}], 'keywords': [u'unioncigarsoc']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 1, 9, 33), 'latlong': None, 'id': 525454012184031232}, {'timestamp': datetime.datetime(2014, 10, 24, 1, 12, 15), 'latlong': None, 'id': 525454691501871105}], 'keywords': [u'jonwurster']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 3, 57, 11), 'latlong': None, 'id': 525496196463218689}, {'timestamp': datetime.datetime(2014, 10, 24, 3, 58, 12), 'latlong': None, 'id': 525496453758599169}, {'timestamp': datetime.datetime(2014, 10, 24, 4, 2, 36), 'latlong': None, 'id': 525497558811287552}], 'keywords': [u'anonymous']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 17, 50, 20), 'latlong': None, 'id': 525705865937301504}, {'timestamp': datetime.datetime(2014, 10, 24, 17, 50, 20), 'latlong': None, 'id': 525705867115921408}], 'keywords': [u'completed']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 18, 8, 31), 'latlong': None, 'id': 525710442421690368}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 14, 19), 'latlong': None, 'id': 525711904002809857}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 18, 34, 27), 'latlong': {u'type': u'Point', u'coordinates': [-122.3862676, 47.6509921]}, 'id': 525716971242127361}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 34, 33), 'latlong': None, 'id': 525716992616300544}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 34, 57), 'latlong': None, 'id': 525717094252691457}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 36, 41), 'latlong': None, 'id': 525717532615770112}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 36, 57), 'latlong': None, 'id': 525717597330079744}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 38, 3), 'latlong': None, 'id': 525717874955264000}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 18, 39, 48), 'latlong': {u'type': u'Point', u'coordinates': [-122.32394708, 47.72110891]}, 'id': 525718313910149120}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 39, 58), 'latlong': None, 'id': 525718357480202240}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 40, 31), 'latlong': None, 'id': 525718493870956544}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 42, 50), 'latlong': None, 'id': 525719079773306880}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 43, 8), 'latlong': {u'type': u'Point', u'coordinates': [-122.32956086, 47.69714837]}, 'id': 525719152825487360}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 43, 42), 'latlong': None, 'id': 525719295800934400}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 43, 53), 'latlong': None, 'id': 525719344157061121}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 18, 53, 11), 'latlong': None, 'id': 525721683379122176}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 53, 12), 'latlong': None, 'id': 525721685836955648}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 53, 23), 'latlong': None, 'id': 525721733278748672}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 53, 52), 'latlong': None, 'id': 525721856830345218}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 54, 26), 'latlong': None, 'id': 525721997675098112}, {'timestamp': datetime.datetime(2014, 10, 24, 18, 54, 55), 'latlong': None, 'id': 525722120152563712}], 'keywords': [u'thatwhitegirrl']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 19, 5, 57), 'latlong': None, 'id': 525724897432334337}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 10, 7), 'latlong': None, 'id': 525725945706328065}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 14, 53), 'latlong': None, 'id': 525727144215732224}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 19, 27, 20), 'latlong': {u'type': u'Point', u'coordinates': [-122.3607491, 47.70142647]}, 'id': 525730279290580992}], 'keywords': [u'marysville']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 19, 35, 41), 'latlong': None, 'id': 525732380657856513}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 41, 4), 'latlong': None, 'id': 525733735593807873}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 41, 28), 'latlong': None, 'id': 525733834474926080}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 19, 42, 35), 'latlong': None, 'id': 525734116957126656}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 43, 41), 'latlong': None, 'id': 525734392380268544}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 44, 14), 'latlong': None, 'id': 525734530930339841}, {'timestamp': datetime.datetime(2014, 10, 24, 19, 50, 19), 'latlong': None, 'id': 525736063055437824}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 20, 7, 28), 'latlong': None, 'id': 525740377664651266}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 8, 6), 'latlong': None, 'id': 525740537140506625}], 'keywords': [u'shooter']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 20, 20, 54), 'latlong': None, 'id': 525743756478541824}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 26, 41), 'latlong': None, 'id': 525745212484624384}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 27, 37), 'latlong': None, 'id': 525745446887510017}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 27, 42), 'latlong': None, 'id': 525745470497640448}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 27, 42), 'latlong': None, 'id': 525745470841581568}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 27, 57), 'latlong': None, 'id': 525745533689012224}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 28), 'latlong': None, 'id': 525745546628050944}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 28, 1), 'latlong': None, 'id': 525745550394527746}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 29, 19), 'latlong': None, 'id': 525745875566739457}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 29, 35), 'latlong': None, 'id': 525745943657062400}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 30, 16), 'latlong': None, 'id': 525746113484439553}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 30, 36), 'latlong': None, 'id': 525746197743824896}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 30, 36), 'latlong': None, 'id': 525746199190831104}], 'keywords': [u'game']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 20, 39, 34), 'latlong': None, 'id': 525748454996578305}, {'timestamp': datetime.datetime(2014, 10, 24, 20, 39, 58), 'latlong': None, 'id': 525748555617951744}], 'keywords': [u'game']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 20, 46, 54), 'latlong': None, 'id': 525750302423937024}], 'keywords': [u'shooting']}
+
+event found:
+{'tweets': [{'timestamp': datetime.datetime(2014, 10, 24, 22, 14, 23), 'latlong': {u'type': u'Point', u'coordinates': [-122.39711201, 47.66573315]}, 'id': 525772315519238144}, {'timestamp': datetime.datetime(2014, 10, 24, 22, 16, 43), 'latlong': None, 'id': 525772904261484544}], 'keywords': [u'shooting']}
+
+done
