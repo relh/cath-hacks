@@ -31,7 +31,7 @@
 					
                 var lat=78;
                 var longi=37.5;
-                var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
+                var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/events"); ///events
                 var myLatlng = new google.maps.LatLng(lat,longi);
                 var mapOptions = {
                     zoom: 4,
@@ -69,8 +69,12 @@
                     if(tweet.hasChildren()) {
                         lat = tweet.child("Lat").val();
                         longi = tweet.child("Long").val();
-                        keywords = tweet.child("Data").val();
-                        timee = tweet.child("Timestamp").val();
+                        tweet_html = tweet.child("Data").val();
+			console.log(lat + "," + longi);
+			console.log(Object.prototype.toString.call(tweet_html));
+			tweet_html = '<blockquote class="twitter-tweet" lang="en"><p>text</p>(@usr) <a href="https://twitter.com/ust/status/' + tweet_html + '></a></blockquote><script async src="\/\/platform.twitter.com/widgets.js" charset="utf-8"><\/script>';
+			console.log(tweet_html);
+                        time = tweet.child("Timestamp").val();
                         var temppos = new google.maps.LatLng(lat,longi);
                         var image = 'tweet.png';
                         var tempmarker = new google.maps.Marker( {
@@ -82,12 +86,12 @@
                             });
                         console.log(temppos);
                         var wrapper = document.createElement("div");
-                        wrapper.innerHTML = keywords;
+                        wrapper.innerHTML = tweet_html;
                         wrapper.className = "map-popup";
                         wrapper.style.height="20em";
                         wrapper.style.width="45em";
                         var tempinfo = new google.maps.InfoWindow({
-                            content: wrapper,//keywords,
+                            content: wrapper,
                         });
  
 			google.maps.event.addListener(tempinfo, 'domready', function () {
