@@ -39,7 +39,7 @@ class Canary:
     def startStream(self, keywords = ['pancake']):
         if self.stream.running:
             self.stream.disconnect()
-        self.stream.filter(track = keywords)#, async = True)
+        self.stream.filter(track = keywords, async = True)
     def stopStream(self):
         self.stream.disconnect()
 
