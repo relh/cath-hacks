@@ -48,10 +48,10 @@ class Canary:
         print 'DEFAULT ONDATA'
     def onError(self, error):
         print '\n'+str(error).strip()
-    def startStream(self, keywords = ['pancake']):
+    def startStream(self, locations = ['pancake']):
         if self.stream.running:
             self.stream.disconnect()
-        self.stream.filter(track = keywords, async = True)
+        self.stream.filter(locations = locations, async = True)
     def stopStream(self):
         self.stream.disconnect()
 
