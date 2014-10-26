@@ -22,14 +22,15 @@ def prune(d):
     return di
 
 def analyze_test(tweets):
-    keywords = [u'tragedy',u'shooting',u'shooter',u'shoot',u'concert',u'game']
-
+    #keywords = [u'tragedy',u'shooting',u'shooter',u'shoot',u'concert',u'game']
+    keywords = [u'rain',u'rainy',u'storm',u'stormy',u'sunny',u'snow',u'snowy',u'cloudy',u'clear',u'windy',u'wind',u'bright']
+    temperature_words = [u'cold',u'freezing',u'frigid',u'chilly',u'mild',u'warm',u'hot',u'scorching',u'scorcher',u'heat']
     all_tweets = copy.copy(tweets)      #copy of tweets
     event = None
     word_freq = {}      #frequency list
     for tweet in tweets:
         #print clean(tweet['text'])
-        
+        if tweet['text'][:2].lower() == 'rt':continue
         #---Your code goes here! Try stuff to find events!
         #^- frequency analysis?
         txt = clean(tweet['text'])
@@ -44,19 +45,25 @@ def analyze_test(tweets):
                 word_freq[w.lower()] += 1
     freq = prune(word_freq)
     freq2 = sorted(freq, key=freq.get)
-    freq = freq2[len(freq2)-20:len(freq2)]  #top 20 current words
+    freq = freq2[len(freq2)-30:len(freq2)]  #top 30 current words
+    #print freq
     i = 0
     for f in freq:
-        if f in keywords or (len(f) > 5 and i == 0):	#tweak
+        if f in keywords:	#tweak
             #print "keyword found: "+f
             #print len(all_tweets)
             for t in all_tweets:
+                if t['text'][:2].lower() == 'rt':continue
                 if f in clean(t['text']).split(' '):
                     if not event:
                         event = {}
                         event['tweets'] = []
                     event['tweets'].append({'latlong':t['latlong'],'timestamp':t['timestamp'],'id':t['id']})
                     event['keywords'] = [f]
+                    for temp in temperature_words:
+			if temp in clean(t['text']).split(' '):
+                            event['keywords'].append(temp)
+
             break
         i += 1
         #---Your code goes above this. Try to find events!
@@ -75,8 +82,8 @@ def analyze_test(tweets):
 
 #----
 
-num = 50    #number of tweets to parse at a time
-f = open('./tweets/23-25_seattle_12km', 'r')
+num = 100    #number of tweets to parse at a time
+f = open('./tweets/20-24_sea_10km', 'r')
 lines = f.readlines();
 t = []
 for l in lines:
