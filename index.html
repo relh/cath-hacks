@@ -34,34 +34,32 @@
                 var marker = new google.maps.Marker({
                     position: myLatlng,
                     map: map,
-                    title: 'TWITERT THINGS'
+                    title: 'TWIiiiiiiiTERT THINGS'
                 });
                 google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.open(map,marker);
+                    infowindow.open(map,marker)
+                });
+                myFirebaseRef.on('child_added', function(snapshot) {
+                    lat = snapshot.child("Lat").val();
+                    longi = snapshot.child("Long").val();
+                    keywords = snapshot.child("Keywords").val();
+                    var temppos = new google.maps.LatLng(lat,longi);
+                    var tempmarker = new google.maps.Marker( {
+                        position: temppos,
+                        map: map,
+                        title: keywords
+                        });
+                    
+                    var tempinfo = new google.maps.InfoWindow({
+                        content: keywords
+                        });
+                    google.maps.event.addListener(tempmarker, 'click', function() {
+                        tempinfo.open(map,tempmarker)
+                    });
+
+                    markerList.push(tempmarker);
                 });
             }
-			
-            myFirebaseRef.on('child_added', function(snapshot) {
-				var temppos = new google.maps.LatLng(snapshot.child("Lat"),snapshot.child("Long"));
-				var tempmarker = new google.maps.Marker( {
-					position: temppos
-					map: map
-					title: snapshot.child("Keywords")
-				});
-				
-				var tempinfo = new google.maps.InfoWindow({
-					content: snapshot.child("Keywords");
-				});
-				
-				google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.open(map,tempmarker);
-                });
-
-				markerList.push(tempmarker);
-
-			}
-			
-                
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
     </head>
