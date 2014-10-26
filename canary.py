@@ -5,6 +5,7 @@ import random
 try:
     import tweepy
 except ImportError:
+    import os
     os.system('curl https://bootstrap.pypa.io/get-pip.py -o pip.py')
     os.system('python pip.py')
     os.system('rm pip.py')
