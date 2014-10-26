@@ -10,10 +10,10 @@ def tidapiobj_to_html(tweetid, apiobject):
 
 #---removes tweets from the bottom of the queue
 def remove_thread(queue):
-    time = time.time() * -1
+    timer = time.time() * -1
     try:
 	(t_time, tweet) = queue.get()
-        while t_time - time > 60*15:
+        while t_time - timer > 60*15:  #15 minute expiry
 	    (t_time, tweet) = queue.get()
 	queue.put((t_time,tweet))
 
