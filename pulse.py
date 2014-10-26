@@ -5,10 +5,6 @@ import time
 from threading import Thread
 from Queue import PriorityQueue
 
-#---needs to be tested!
-def tidapiobj_to_html(tweetid, apiobject):
-    return json.loads(apiobject.get_oembed(id=tweetid))['html']
-
 #---removes tweets from the bottom of the queue
 def consume(queue):
     while True:
