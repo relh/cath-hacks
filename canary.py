@@ -23,7 +23,7 @@ class OnDataListener(tweepy.streaming.StreamListener):
         return True
     def on_error(self, status):
         self.parent.onError(status)
-        return False
+        return True
 
 class Canary:
     def __init__(self, consumer_key, consumer_secret, access_token, access_token_secret):
