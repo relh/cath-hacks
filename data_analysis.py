@@ -47,7 +47,7 @@ def analyze_test(tweets):
     freq = freq2[len(freq2)-20:len(freq2)]  #top 20 current words
     i = 0
     for f in freq:
-        if f in keywords or (len(f) > 8 and i == 0):
+        if f in keywords or (len(f) > 5 and i == 0):	#tweak
             #print "keyword found: "+f
             #print len(all_tweets)
             for t in all_tweets:
