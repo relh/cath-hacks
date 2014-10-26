@@ -16,8 +16,10 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script>
             function initialize() {
-                var lat=-25.363882;
-                var longi=131.044922;
+				var markerList = [];
+					
+                var lat=78;
+                var longi=37.5;
                 var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
                 var myLatlng = new google.maps.LatLng(lat,longi);
                 var mapOptions = {
@@ -38,8 +40,27 @@
                     infowindow.open(map,marker);
                 });
             }
-            myFirebaseRef.child('0').child('Long').on('value',function (snapshot) {
-                myLatlng = new google.maps.Latlng(l
+			
+            myFirebaseRef.on('child_added', function(snapshot) {
+				var temppos = new google.maps.LatLng(snapshot.child("Lat"),snapshot.child("Long"));
+				var tempmarker = new google.maps.Marker( {
+					position: temppos
+					map: map
+					title: snapshot.child("Keywords")
+				});
+				
+				var tempinfo = new google.maps.InfoWindow({
+					content: snapshot.child("Keywords");
+				});
+				
+				google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map,tempmarker);
+                });
+
+				markerList.push(tempmarker);
+
+			}
+			
                 
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
