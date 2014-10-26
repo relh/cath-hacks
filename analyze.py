@@ -1,3 +1,7 @@
+import requests
+import json
+
+s = requests.session()
 
 #---Analyzes tweets for news events
 def analyze(tweets):
@@ -5,4 +9,6 @@ def analyze(tweets):
 
 #---Send information to database
 def trigger(event):
-    print ""
+    r = s.post("https://luminous-fire-1209.firebaseio.com/events.json", 
+                      data=json.dumps(event))
+
