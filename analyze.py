@@ -9,6 +9,6 @@ def analyze(tweets):
 
 #---Send information to database
 def trigger(event):
-    r = s.post("https://luminous-fire-1209.firebaseio.com/events.json", 
-                      data=json.dumps(event))
+    url = "https://luminous-fire-1209.firebaseio.com/events.json" 
+    r = s.post(url, data=json.dumps(event))
 
