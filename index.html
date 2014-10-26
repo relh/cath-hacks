@@ -27,8 +27,9 @@
         <script>
             var markerList = [];
             var map;
+            var time;
             function initialize() {
-					
+                time = new Date().getTime()/1000; 
                 var lat=78;
                 var longi=37.5;
                 var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/events"); ///events
@@ -63,7 +64,7 @@
                     eventToTweetArray(snapshot,map);
                 });
             }
-            var interval = setInterval(function (){updater(map)},10000);
+            var interval = setInterval(function (){updater(map)},500);
             function eventToTweetArray(snap, map) {
                 snap.forEach(function(tweet) {
                     if(tweet.hasChildren()) {
@@ -114,9 +115,10 @@
                 });
             } 
             function updater(map) {
-                var time = new Date().getTime()/1000; 
                 var arrayLength = markerList.length;
                 for(var i = 0;i < arrayLength;i++) {
+                    console.log("systime" + time);
+                    console.log("markertime" + markerList[i].zIndex);
                     if(time < markerList[i].zIndex || time > markerList[i].zIndex + 7200) {
                         if(markerList[i].getMap() !== null){
                             markerList[i].setMap(null);
@@ -129,7 +131,7 @@
                 }
             }
             function showvalue(newValue) {
-                    console.log(newValue);
+                time = newValue;
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
