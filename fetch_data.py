@@ -28,7 +28,7 @@ def __main__():
                            since="2014-10-23",
                            until="2014-10-25",
                            lang="en").items():
-        time.sleep(.3)
+        time.sleep(.5)
         t = {}
         t['text'] = clean(tweet.text)
         t['latlong'] = tweet.coordinates
