@@ -8,6 +8,8 @@ import random
 
 analyze_session = requests.session()
 
+SENT_TWEETS = set()
+
 #---Gets rid of extra punctuation, not latin characters, and urls
 def clean(message):
     out = ''
@@ -48,12 +50,14 @@ def analyze(tweets):
     for f in freq:
         if f in keywords:
             for t in all_tweets:
+                if t['id'] in SENT_TWEETS:continue
                 if t['text'][:2].lower() == 'rt':continue
                 if f in clean(t['text']).lower().split():
                     if not event:
                         event = {}
                     event[str(t['id'])] = {'Lat':t['latlong'][0], 'Long':t['latlong'][1],\
                                                'Timestamp':t['timestamp'],'Data':t['id']}
+                    SENT_TWEETS.add(t['id'])
                     description += f +', '
                     for temp in temperature_words:
                         if temp in clean(t['text']).split():
