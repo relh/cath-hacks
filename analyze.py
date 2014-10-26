@@ -14,11 +14,9 @@ def clean(STRING):
 
 #---Analyzes tweets for news events
 def analyze(tweets):
-    print 'got these tweets to analyze:'
-    print tweets
     event = None
+    
     for tweet in tweets:
-        print 'analyzing tweet!'
         print clean(tweet['text'])
         if 'obama' in tweet['text'] or random.random() > 0.8:
             if not event:event = {}
