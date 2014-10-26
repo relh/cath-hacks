@@ -16,7 +16,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script>
             function initialize() {
-				var markerList = [];
+                var markerTable = {};
 					
                 var lat=78;
                 var longi=37.5;
@@ -52,14 +52,40 @@
                     
                     var tempinfo = new google.maps.InfoWindow({
                         content: keywords
-                        });
+                    });
                     google.maps.event.addListener(tempmarker, 'click', function() {
                         tempinfo.open(map,tempmarker)
                     });
 
-                    markerList.push(tempmarker);
+                    markerTable[tempmarker]= eventToTweetArray(snapshot, map);
                 });
             }
+            function eventToTweetArray(snap, map) {
+                var tweetArray = [];
+                snap.forEach(function(tweet) {
+                    if(tweet.hasChildren()) {
+                        lat = tweet.child("Lat").val();
+                        longi = tweet.child("Long").val();
+                        keywords = tweet.child("Data").val();
+                        var temppos = new google.maps.LatLng(lat,longi);
+                        var tempmarker = new google.maps.Marker( {
+                            position: temppos,
+                            map: map,
+                            title: keywords
+                            });
+                        console.log(temppos);
+                        var tempinfo = new google.maps.InfoWindow({
+                            content: keywords
+                        });
+                        google.maps.event.addListener(tempmarker, 'click', function() {
+                            tempinfo.open(map,tempmarker)
+                        });
+                        console.log("boop");
+                        tweetArray.push(tempmarker);
+                    }
+                });
+                return tweetArray; 
+            } 
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
     </head>
