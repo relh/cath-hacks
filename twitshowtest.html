@@ -1,0 +1,44 @@
+<div id="googleMap" style="width:500px;height:380px;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>var myCenter = new google.maps.LatLng(51.508742, -0.120850);
+
+function initialize() {
+    var mapProp = {
+        center: myCenter,
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+    var marker = new google.maps.Marker({
+        position: myCenter,
+    });
+
+    marker.setMap(map);
+
+    var text = '<blockquote class="twitter-tweet" lang="en"><p>EVO KAŽU DA NAŠA DECA NE VISE TOLIKO NA INTERNETU-PA NE MOGU DA STIGNU OD RODITELJA JEBOTE.</p>&mdash; Nichim Izazvan (@NichimIzazvan) <a href="https://twitter.com/NichimIzazvan/statuses/419180893035827200">January 3, 2014</a></blockquote>';
+    
+    var infowindow = new google.maps.InfoWindow({
+        content: text
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+    });
+
+    google.maps.event.addListener(infowindow, 'domready', function () {
+        ! function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+    });
+}
+
+initialize();
+</script>
