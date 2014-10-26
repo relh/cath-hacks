@@ -1,3 +1,4 @@
+# analyze and trigger must be blocking calls
 from analyze import analyze, trigger
 import time
 
@@ -10,23 +11,23 @@ def tidapiobj_to_html(tweetid, apiobject):
 
 #---removes tweets from the bottom of the queue
 def remove_thread(queue):
-    timer = time.time() * -1
-    try:
-	(t_time, tweet) = queue.get()
-        while t_time - timer > 60*15:  #15 minute expiry
-	    (t_time, tweet) = queue.get()
-	queue.put((t_time,tweet))
-
-    except Queue.Empty:
-	return
-
-    return
+    while True:
+        time.sleep(0.25)
+        timer = time.time() * -1
+        try:
+            (t_time, tweet) = queue.get()
+            while t_time - timer > 60*15:  #15 minute expiry
+                (t_time, tweet) = queue.get()
+            queue.put((t_time,tweet))
+        except Queue.Empty:
+            continue
 
 #---analyzes queue for news events
 def analysis_thread(queue):
-    #analyze current queue
-    event = analyze(queue)
-    if event:
-	trigger(event)
-    return
+    while True:
+        time.sleep(0.25)
+        #analyze current queue
+        event = analyze(queue)
+        if event:
+            trigger(event)
 
