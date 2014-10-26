@@ -2,13 +2,17 @@ import sys
 import pulse
 
 def __main__():
-    q = PriorityQueue()	#elements will be a tuple (-1*time, [tweet])
+    if len(sys.argv) != 6:
+        print "python start.py <c_key> <c_secret> <a_token> <a_token_s> <geotags>"
+        sys.exit(-1)
 
-    #producer = Thread(Target=pulse.stream_thread, args=(q,))
-    consumer = Thread(Target=pulse.remove_thread, args=(q,))
-    #analyzer = Thread(Target=pulse.analysis_thread, args=(q,))
+    c_key = sys.argv[1]
+    c_secret = sys.argv[2]
+    a_token = sys.argv[3]
+    a_token_s = sys.argv[4]
+    geotags = sys.argv[5]
 
-    #producer.start()
-    consumer.start()
-    #analyzer.start()
+    p = pulse.Pulse(c_key, c_secret, a_token, a_token_s, geotags)
+    p.start()
 
+__main__()
