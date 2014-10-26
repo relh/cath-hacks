@@ -1,21 +1,4 @@
-import os
-from Queue import PriorityQueue
-from threading import Thread
-import datetime
-import time
 import sys
-
-try:
-    import canary
-except ImportError:
-    os.system('curl https://bootstrap.pypa.io/get-pip.py -o pip.py')
-    os.system('python pip.py')
-    os.system('rm pip.py')
-    os.system('pip install tweepy')
-    os.system('pip install requests==1.1.0')
-    os.system('pip install python-firebase')
-    import canary
-
 import pulse
 
 def __main__():
