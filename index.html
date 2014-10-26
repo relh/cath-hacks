@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
@@ -21,21 +22,12 @@
 		background-color: black;
 		z-index: 20;
 	    }
-	    div.map-popup {
-		overflow: auto;
-		overflow-x: hidden;
-		overflow-y: auto;
-	    }
         </style>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-
-    </head>
-    <body>
-	<div id="header"></div>
-        <div id="map-canvas"></div>
         <script>
+            var markerList = [];
+            var map;
             function initialize() {
-                var markerTable = {};
 					
                 var lat=78;
                 var longi=37.5;
@@ -45,7 +37,7 @@
                     zoom: 4,
                     center: myLatlng
                 };
-                var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
                 myFirebaseRef.on('child_added', function(snapshot) {
                     lat = snapshot.child("Lat").val();
                     longi = snapshot.child("Long").val();
@@ -56,24 +48,23 @@
                     var tempmarker = new google.maps.Marker( {
                         position: temppos,
                         map: map,
-                        title: keywords,
+                        title: "event",
                         icon: image,
                         zIndex: timee
                         });
                     
                     var tempinfo = new google.maps.InfoWindow({
-                        content: keywords,
+                        content: keywords
                     });
-                    google.maps.event.addListener(tempmarker, 'click', function() {
+                    google.maps.event.addListener(tempmarker, 'klic ', function() {
                         tempinfo.open(map,tempmarker)
                     });
-
-                    markerTable[tempmarker]= eventToTweetArray(snapshot, map);
+                    markerList.push(tempmarker);                    
+                    eventToTweetArray(snapshot,map);
                 });
-                var interval = setInterval(function (){updater(markerTable)},10000);
             }
+            var interval = setInterval(function (){updater(map)},10000);
             function eventToTweetArray(snap, map) {
-                var tweetArray = [];
                 snap.forEach(function(tweet) {
                     if(tweet.hasChildren()) {
                         lat = tweet.child("Lat").val();
@@ -85,46 +76,44 @@
                         var tempmarker = new google.maps.Marker( {
                             position: temppos,
                             map: map,
-                            title: keywords,
+                            title: "tweet",
                             icon: image,
                             zIndex: timee
                             });
                         console.log(temppos);
-		        var wrapper = document.createElement("div");
-			wrapper.innerHTML = keywords;
-	  	        wrapper.className = "map-popup";
-			wrapper.style.height="20em";
-			var tempinfo = new google.maps.InfoWindow({
-                            content: wrapper,//keywords,
+                        var tempinfo = new google.maps.InfoWindow({
+                            content: keywords
                         });
-			console.log(tempinfo);
-			google.maps.event.addListener(tempinfo, 'domready', function () {
-				! function (d, s, id) {
-				    console.log(d.getElementsByTagName(s));
-				    var js, fjs = d.getElementsByTagName(s)[0];
-				    if (!d.getElementById(id)) {
-					js = d.createElement(s);
-					js.id = id;
-					js.src = "//platform.twitter.com/widgets.js";
-					fjs.parentNode.insertBefore(js, fjs);
-				    }
-				}(document, "script", "twitter-wjs");
-	       	        });
                         google.maps.event.addListener(tempmarker, 'click', function() {
                             tempinfo.open(map,tempmarker)
                         });
-                        tweetArray.push(tempmarker);
+                        markerList.push(tempmarker);
                     }
                 });
-                return tweetArray; 
             } 
-            function updater(marker_list) {
-//                for(var marker in marker_list) {
-//                   if(marker
- //               }
+            function updater(map) {
+                var time = new Date().getTime()/1000; 
+                var arrayLength = markerList.length;
+                for(var i = 0;i < arrayLength;i++) {
+                    if(time < markerList[i].zIndex || time > markerList[i].zIndex + 7200) {
+                        console.log("System time: "+time);
+                        console.log("Marker time: "+markerList[i].zIndex);
+                        if(markerList[i].getMap() !== null){
+                            markerList[i].setMap(null);
+                        }
+                    } else{
+                        if(!markerList[i].getMap()){
+                            markerList[i].setMap(map);
+                        }
+                    }
+                }
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+    </head>
+    <body>
+	<div id="header"></div>
+        <div id="map-canvas"></div>
     </body>
 </html>
 
