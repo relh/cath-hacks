@@ -56,12 +56,12 @@ class Pulse:
             tweet = {}
             tweet['timestamp'] = timestamp
             tweet['text'] = twit['text']
-            tweet['id'] = twit['
+            tweet['id'] = twit['id_str']#does this actually work? must test!
             if 'coordinates' not in twit or 'coordinates' not in twit['coordinates']:
-                return
+                print twit
+                return#no coordinates in this tweet... somehow got in? we need to watch this!
             tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
             canary.queue.put((0-timestamp, tweet))
         self.canary.data = onData
         self.canary.startStream(geotags)#may not work???
-        self.api = self.canary.api
-        
+
