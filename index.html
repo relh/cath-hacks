@@ -23,6 +23,11 @@
 	    }
         </style>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    </head>
+    <body>
+	<div id="header"></div>
+        <div id="map-canvas"></div>
         <script>
             function initialize() {
                 var markerTable = {};
@@ -58,6 +63,17 @@
                         tempinfo.open(map,tempmarker)
                     });
 
+		    google.maps.event.addListener(infowindow, 'domready', function () {
+			! function (d, s, id) {
+			    var js, fjs = d.getElementsByTagName(s)[0];
+			    if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			    }
+			}(document, "script", "twitter-wjs");
+		    });
                     markerTable[tempmarker]= eventToTweetArray(snapshot, map);
                 });
                 var interval = setInterval(function (){updater(markerTable)},10000);
@@ -98,10 +114,6 @@
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-    </head>
-    <body>
-	<div id="header"></div>
-        <div id="map-canvas"></div>
     </body>
 </html>
 
