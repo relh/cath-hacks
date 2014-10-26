@@ -44,10 +44,12 @@
                     longi = snapshot.child("Long").val();
                     keywords = snapshot.child("Keywords").val();
                     var temppos = new google.maps.LatLng(lat,longi);
+                    var image = 'event.png';
                     var tempmarker = new google.maps.Marker( {
                         position: temppos,
                         map: map,
-                        title: keywords
+                        title: keywords,
+                        icon: image
                         });
                     
                     var tempinfo = new google.maps.InfoWindow({
@@ -68,10 +70,12 @@
                         longi = tweet.child("Long").val();
                         keywords = tweet.child("Data").val();
                         var temppos = new google.maps.LatLng(lat,longi);
+                        var image = 'tweet.png';
                         var tempmarker = new google.maps.Marker( {
                             position: temppos,
                             map: map,
-                            title: keywords
+                            title: keywords,
+                            icon: image
                             });
                         console.log(temppos);
                         var tempinfo = new google.maps.InfoWindow({
@@ -80,7 +84,6 @@
                         google.maps.event.addListener(tempmarker, 'click', function() {
                             tempinfo.open(map,tempmarker)
                         });
-                        console.log("boop");
                         tweetArray.push(tempmarker);
                     }
                 });
