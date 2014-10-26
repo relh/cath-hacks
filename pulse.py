@@ -2,6 +2,7 @@
 import analyze
 import canary
 import time
+import copy
 from threading import Thread
 from Queue import PriorityQueue
 
@@ -24,11 +25,9 @@ def operate(queue):
         time.sleep(0.25)
         #analyze current queue
         try:
-            event = analyze.analyze(queue)
+            analyze.analyze(copy.copy(queue.queue))
         except:
             pass # BAD!
-        if event:
-            analyze.trigger(event)
 
 class Pulse:
     def __init__(self, consumer_key, consumer_secret, access_token, access_token_secret, geotags):
@@ -39,9 +38,9 @@ class Pulse:
         self.geotags = geotags
     def start(self):
         self.queue = PriorityQueue()
-        self.consumer = Thread(target = consume, args = (queue, ))
+        self.consumer = Thread(target = consume, args = (self.queue, ))
         self.consumer.start()
-        self.operater = Thread(target = operate, args = (queue, ))
+        self.operater = Thread(target = operate, args = (self.queue, ))
         self.operater.start()
         self.canary = canary.Canary(self.consumer_key, self.consumer_secret,\
                                     self.access_token, self.access_token_secret)
@@ -59,5 +58,5 @@ class Pulse:
             tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
             canary.queue.put((0-timestamp, tweet))
         self.canary.data = onData
-        self.canary.startStream(geotags)#may not work???
+        self.canary.startStream(self.geotags)#may not work???
 
