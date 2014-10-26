@@ -26,8 +26,11 @@ def operate(queue):
         time.sleep(0.25)
         #analyze current queue
         try:
-            analyze.analyze(copy.copy(queue.queue))
-        except:
+            print 'sent to analyze'
+            analyze.analyze(copy.copy(map(lambda x:x[1],queue.queue)))
+        except Exception,e:
+            print 'whoa not analyzed'
+            print str(e)
             pass # BAD!
 
 class Pulse:
@@ -52,15 +55,16 @@ class Pulse:
                 twit = json.loads(data)
                 print 'THIS IS OUR TWIT:'
                 print twit
-                tweet = {}
-                tweet['timestamp'] = timestamp
-                tweet['text'] = twit['text']
-                tweet['id'] = str(twit['id'])#does this actually work? must test!
-                if 'coordinates' not in twit or 'coordinates' not in twit['coordinates']:
-                    print twit
-                    return#no coordinates in this tweet... somehow got in? we need to watch this!
-                tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
-                self.canary.queue.put((0-timestamp, tweet))
+                try:
+                    tweet = {}
+                    tweet['timestamp'] = timestamp
+                    tweet['text'] = twit['text']
+                    tweet['id'] = str(twit['id'])#does this actually work? must test!
+                    tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
+                    self.canary.queue.put((0-timestamp, tweet))
+                except Exception,e:
+                    print "LOLWAT"
+                    print str(e)
             except Exception,e:
                 print 'EXCEPTION!'
                 print str(e)

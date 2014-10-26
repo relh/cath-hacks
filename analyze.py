@@ -11,14 +11,18 @@ def clean(STRING):
 
 #---Analyzes tweets for news events
 def analyze(tweets):
+    print 'got these tweets to analyze:'
+    print tweets
     event = None
     for tweet in tweets:
+        print 'analyzing tweet!'
         print clean(tweet['text'])
         if 'obama' in tweet['text']:
             if not event:event = {'tweets':[]}
             event['tweets'].append({'latlong':tweet['latlong'], 'timestamp':tweet['timestamp'],\
                                     'id':tweet['id']})
     if event:
+        print 'event detected!'
         avg_lat = sum(map(lambda x:x['latlong'][0], event['tweets']))/float(len(event['tweets']))
         avg_long = sum(map(lambda x:x['latlong'][1], event['tweets']))/float(len(event['tweets']))
         avg_time = sum(map(lambda x:x['timestamp'], event['tweets']))/float(len(event['tweets']))
