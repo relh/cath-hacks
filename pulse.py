@@ -19,6 +19,7 @@ def remove_thread(queue):
 	(t_time, tweet) = queue.get()
         while t_time - time > 60*15:
 	    (t_time, tweet) = queue.get()
+	queue.put((t_time,tweet))
 
     except Queue.Empty:
 	return
