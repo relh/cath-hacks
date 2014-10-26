@@ -3,6 +3,7 @@ import analyze
 import canary
 import time
 import copy
+import json
 from threading import Thread
 from Queue import PriorityQueue
 
@@ -46,17 +47,23 @@ class Pulse:
                                     self.access_token, self.access_token_secret)
         self.canary.queue = self.queue
         def onData(canary, data):
-            timestamp = time.time()
-            twit = json.loads(data)
-            tweet = {}
-            tweet['timestamp'] = timestamp
-            tweet['text'] = twit['text']
-            tweet['id'] = twit['id_str']#does this actually work? must test!
-            if 'coordinates' not in twit or 'coordinates' not in twit['coordinates']:
+            try:
+                timestamp = time.time()
+                twit = json.loads(data)
+                print 'THIS IS OUR TWIT:'
                 print twit
-                return#no coordinates in this tweet... somehow got in? we need to watch this!
-            tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
-            canary.queue.put((0-timestamp, tweet))
-        self.canary.data = onData
+                tweet = {}
+                tweet['timestamp'] = timestamp
+                tweet['text'] = twit['text']
+                tweet['id'] = str(twit['id'])#does this actually work? must test!
+                if 'coordinates' not in twit or 'coordinates' not in twit['coordinates']:
+                    print twit
+                    return#no coordinates in this tweet... somehow got in? we need to watch this!
+                tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
+                self.canary.queue.put((0-timestamp, tweet))
+            except Exception,e:
+                print 'EXCEPTION!'
+                print str(e)
+        self.canary.onData = onData
         self.canary.startStream(self.geotags)#may not work???
 

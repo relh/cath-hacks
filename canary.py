@@ -29,7 +29,7 @@ class OnDataListener(tweepy.streaming.StreamListener):
     def __init__(self, parent):
         self.parent = parent
     def on_data(self, data):
-        self.parent.onData(data)
+        self.parent.onData(self.parent, data)
         return True
     def on_error(self, status):
         self.parent.onError(status)
@@ -43,7 +43,9 @@ class Canary:
         self.listener = OnDataListener(self)
         self.stream = tweepy.Stream(auth, self.listener)
     def onData(self, data):
+        print 'DEFAULT ONDATA'
         print '\n'+str(data).strip()
+        print 'DEFAULT ONDATA'
     def onError(self, error):
         print '\n'+str(error).strip()
     def startStream(self, keywords = ['pancake']):
