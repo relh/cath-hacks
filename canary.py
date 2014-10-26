@@ -1,7 +1,16 @@
 import time
 import datetime
 import random
-import tweepy
+
+try:
+    import tweepy
+except ImportError:
+    os.system('curl https://bootstrap.pypa.io/get-pip.py -o pip.py')
+    os.system('python pip.py')
+    os.system('rm pip.py')
+    os.system('pip install tweepy')
+    os.system('pip install requests')
+    import tweepy
 
 def printHelp():
     print 'Usage example: '
