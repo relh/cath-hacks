@@ -1,0 +1,4 @@
+curl -X POST "https://api.digitalocean.com/v2/droplets" \
+    -d'{"name":"My-Droplet","region":"nyc3","size":"512mb","image":7211719}' \
+        -H "Authorization: Bearer 4b9b3d605af5951c11d2e6b00b6e4c92df04bade011157fae3902fa205e793b0" -H "Content-Type: application/json" 
+
