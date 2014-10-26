@@ -21,6 +21,11 @@
 		background-color: black;
 		z-index: 20;
 	    }
+	    div.map-popup {
+		overflow: auto;
+		overflow-x: hidden;
+		overflow-y: auto;
+	    }
         </style>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
@@ -57,7 +62,7 @@
                         });
                     
                     var tempinfo = new google.maps.InfoWindow({
-                        content: keywords
+                        content: keywords,
                     });
                     google.maps.event.addListener(tempmarker, 'click', function() {
                         tempinfo.open(map,tempmarker)
@@ -85,11 +90,17 @@
                             zIndex: timee
                             });
                         console.log(temppos);
-                        var tempinfo = new google.maps.InfoWindow({
-                            content: keywords
+		        var wrapper = document.createElement("div");
+			wrapper.innerHTML = keywords;
+	  	        wrapper.className = "map-popup";
+			wrapper.style.height="20em";
+			var tempinfo = new google.maps.InfoWindow({
+                            content: wrapper,//keywords,
                         });
+			console.log(tempinfo);
 			google.maps.event.addListener(tempinfo, 'domready', function () {
 				! function (d, s, id) {
+				    console.log(d.getElementsByTagName(s));
 				    var js, fjs = d.getElementsByTagName(s)[0];
 				    if (!d.getElementById(id)) {
 					js = d.createElement(s);
