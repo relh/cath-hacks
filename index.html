@@ -63,17 +63,6 @@
                         tempinfo.open(map,tempmarker)
                     });
 
-		    google.maps.event.addListener(tempinfo, 'domready', function () {
-			! function (d, s, id) {
-			    var js, fjs = d.getElementsByTagName(s)[0];
-			    if (!d.getElementById(id)) {
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//platform.twitter.com/widgets.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			    }
-			}(document, "script", "twitter-wjs");
-		    });
                     markerTable[tempmarker]= eventToTweetArray(snapshot, map);
                 });
                 var interval = setInterval(function (){updater(markerTable)},10000);
@@ -99,9 +88,6 @@
                         var tempinfo = new google.maps.InfoWindow({
                             content: keywords
                         });
-                        google.maps.event.addListener(tempmarker, 'click', function() {
-                            tempinfo.open(map,tempmarker)
-                        });
 			google.maps.event.addListener(tempinfo, 'domready', function () {
 				! function (d, s, id) {
 				    var js, fjs = d.getElementsByTagName(s)[0];
@@ -113,6 +99,9 @@
 				    }
 				}(document, "script", "twitter-wjs");
 	       	        });
+                        google.maps.event.addListener(tempmarker, 'click', function() {
+                            tempinfo.open(map,tempmarker)
+                        });
                         tweetArray.push(tempmarker);
                     }
                 });
