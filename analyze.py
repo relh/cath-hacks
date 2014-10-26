@@ -3,6 +3,7 @@ FIREBASE_EVENTS_ENDPOINT = "https://e-pulse.firebaseio.com/events.json"
 import requests
 import json
 import re
+import random
 
 analyze_session = requests.session()
 
@@ -19,17 +20,22 @@ def analyze(tweets):
     for tweet in tweets:
         print 'analyzing tweet!'
         print clean(tweet['text'])
-        if 'obama' in tweet['text']:
-            if not event:event = {'tweets':[]}
-            event['tweets'].append({'latlong':tweet['latlong'], 'timestamp':tweet['timestamp'],\
-                                    'id':tweet['id']})
+        if 'obama' in tweet['text'] or random.random() > 0.8:
+            if not event:event = {}
+            event[str(tweet['id'])] = {'Lat':tweet['latlong'][0], 'Long':tweet['latlong'][1],\
+                                       'Timestamp':tweet['timestamp'],'Data':tweet['id']}
+    
+    # SET EVENT DESCRIPTION IN VAR DESCRIPTION
+    description = 'beautiful weather'
+    # EVENT MUST CONTAIN TWEETS WITH LAT,LONG,TIMESTAMP,DATA
     if event:
         print 'event detected!'
-        avg_lat = sum(map(lambda x:x['latlong'][0], event['tweets']))/float(len(event['tweets']))
-        avg_long = sum(map(lambda x:x['latlong'][1], event['tweets']))/float(len(event['tweets']))
-        avg_time = sum(map(lambda x:x['timestamp'], event['tweets']))/float(len(event['tweets']))
-        keywords = 'description'
-        event['latlong'] = str([avg_lat, avg_long])
-        event['keywords'] = 'keywords'
-        event['timestamp'] = avg_time
+        tweets = [event[x] for x in event if isinstance(event[x], dict)]
+        avg_lat = sum(map(lambda x:x['Lat'], tweets))/float(len(tweets))
+        avg_long = sum(map(lambda x:x['Long'], tweets))/float(len(tweets))
+        avg_time = sum(map(lambda x:x['Timestamp'], tweets))/float(len(tweets))
+        event['Lat'] = avg_lat
+        event['Long'] = avg_long
+        event['Keywords'] = description
+        event['Timestamp'] = avg_time
         analyze_session.post(FIREBASE_EVENTS_ENDPOINT, data=json.dumps(event))
