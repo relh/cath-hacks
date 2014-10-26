@@ -36,18 +36,16 @@
         <div id="map-canvas"></div>
 	 <script>
             function initialize() {
-                var markerTable = {};
-					
+                var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
                 var lat=78;
                 var longi=37.5;
-                var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
                 var myLatlng = new google.maps.LatLng(lat,longi);
                 var mapOptions = {
-                    zoom: 4,
+                    zoom: 12,
                     center: myLatlng
                 };
                 var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-                var contentString = 'whater lol';
+                var contentString = '<blockquote class="twitter-tweet" lang="en"><p>Personally, I think America is ready for a woman to scale the White House fence.</p>&mdash; Conan O&#39;Brien (@ConanOBrien) <a href="https://twitter.com/ConanOBrien/status/526195522823286784">October 26, 2014</a></blockquote>'
                 var infowindow = new google.maps.InfoWindow({
                     content: contentString
                 });
@@ -59,6 +57,19 @@
                 google.maps.event.addListener(marker, 'click', function() {
                     infowindow.open(map,marker)
                 });
+
+	    google.maps.event.addListener(infowindow, 'domready', function () {
+		! function (d, s, id) {
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (!d.getElementById(id)) {
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		    }
+		}(document, "script", "twitter-wjs");
+	    });
+
                 myFirebaseRef.on('child_added', function(snapshot) {
                     lat = snapshot.child("Lat").val();
                     longi = snapshot.child("Long").val();
