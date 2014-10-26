@@ -1,10 +1,10 @@
 FIREBASE_EVENTS_ENDPOINT = "https://e-pulse.firebaseio.com/events.json"
 
+import copy
 import requests
 import json
 import re
 import random
-from data_analysis import prune
 
 analyze_session = requests.session()
 
@@ -28,67 +28,43 @@ def clean(message):
         out += ' '
     return out.lower().strip()
 
-#---Analyzes tweets for news events
 def analyze(tweets):
-    event = None
-    
     keywords = [u'rain',u'rainy',u'storm',u'stormy',u'sunny',u'snow',u'snowy',u'cloudy',u'clear',u'windy',u'wind',u'bright']
     temperature_words = [u'cold',u'freezing',u'frigid',u'chilly',u'mild',u'warm',u'hot',u'scorching',u'scorcher',u'heat']
-    all_tweets = copy.copy(tweets)      #copy of tweets
-    word_freq = {}      #frequency list
+    event = None
+    word_freq = {}
+    all_tweets = copy.deepcopy(tweets)
     for tweet in tweets:
-        #print clean(tweet['text'])
         if tweet['text'][:2].lower() == 'rt':continue
-        #---Your code goes here! Try stuff to find events!
-        #^- frequency analysis?
         txt = clean(tweet['text'])
-        #txt = tweet['text']
-        words = txt.split(' ')  #wordlist
-        #print txt
-        #print words
+        words = txt.split()
         for w in words:
             if not w.lower() in word_freq:
                 word_freq[w.lower()] = 1
             else:
                 word_freq[w.lower()] += 1
-    freq = prune(word_freq)
-    freq2 = sorted(freq, key=freq.get)
-    freq = freq2[len(freq2)-30:len(freq2)]  #top 30 current words
-    #print freq
-    i = 0
+    freq = [i[0] for i in sorted(word_freq.items(),key=lambda x:x[1])][::-1][-30:]
+    description = ''
     for f in freq:
-        if f in keywords:       #tweak
-            #print "keyword found: "+f
-            #print len(all_tweets)
+        if f in keywords:
             for t in all_tweets:
                 if t['text'][:2].lower() == 'rt':continue
-                if f in clean(t['text']).split(' '):
+                if f in clean(t['text']).lower().split():
                     if not event:
                         event = {}
-                        event['tweets'] = []
-                    event['tweets'].append({'latlong':t['latlong'],'timestamp':t['timestamp'],'id':t['id']})
-                    event['keywords'] = [f]
+                    event[str(t['id'])] = {'Lat':t['latlong'][0], 'Long':t['latlong'][1],\
+                                               'Timestamp':t['timestamp'],'Data':t['id']}
+                    description += f +', '
                     for temp in temperature_words:
-                        if temp in clean(t['text']).split(' '):
-                            event['keywords'].append(temp)
-
-            break
-        i += 1
-
-
-    
-    # SET EVENT DESCRIPTION IN VAR DESCRIPTION
-    description = 'weather'
-    # EVENT MUST CONTAIN TWEETS WITH LAT,LONG,TIMESTAMP,DATA
+                        if temp in clean(t['text']).split():
+                            description += temp+', '
     if event:
-        print 'event detected!'
-        print event
         tweets = [event[x] for x in event if isinstance(event[x], dict)]
-        #avg_lat = sum(map(lambda x:x['Lat'], tweets))/float(len(tweets))
-        #avg_long = sum(map(lambda x:x['Long'], tweets))/float(len(tweets))
-        #avg_time = sum(map(lambda x:x['Timestamp'], tweets))/float(len(tweets))
-        #event['Lat'] = avg_lat
-        #event['Long'] = avg_long
-        #event['Keywords'] = description
-        #event['Timestamp'] = avg_time
-        #analyze_session.post(FIREBASE_EVENTS_ENDPOINT, data=json.dumps(event))
+        avg_lat = sum(map(lambda x:x['Lat'], tweets))/float(len(tweets))
+        avg_long = sum(map(lambda x:x['Long'], tweets))/float(len(tweets))
+        avg_time = sum(map(lambda x:x['Timestamp'], tweets))/float(len(tweets))
+        event['Lat'] = avg_lat
+        event['Long'] = avg_long
+        event['Keywords'] = description
+        event['Timestamp'] = avg_time
+        analyze_session.post(FIREBASE_EVENTS_ENDPOINT, data=json.dumps(event))

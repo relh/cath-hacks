@@ -12,7 +12,7 @@ def __main__():
     a_token_s = sys.argv[4]
     geotags = sys.argv[5]
 
-    p = pulse.Pulse(c_key, c_secret, a_token, a_token_s, geotags)
+    p = pulse.Pulse(c_key, c_secret, a_token, a_token_s, eval(geotags))
     p.start()
 
 __main__()

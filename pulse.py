@@ -27,6 +27,7 @@ def operate(queue):
         try:
             analyze.analyze(copy.copy(map(lambda x:x[1],queue.queue)))
         except Exception,e:
+            print 'ANALYZE PROBLEM'
             print str(e)
             pass # BAD!
 
