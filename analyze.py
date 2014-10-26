@@ -8,9 +8,22 @@ import random
 analyze_session = requests.session()
 
 #---Gets rid of extra punctuation, not latin characters, and urls
-def clean(STRING):
-    STRING = re.sub(r'(http|https):\/\/.*?[\s]', '', STRING)
-    return (''.join([c for c in STRING if c.lower() in 'abcdefghijklmnopqrstuvwxyz ']))[:140]
+def clean(message):
+    out = ''
+    words = message.replace('\n',' ')
+    bad_words = ['a','the','he','she']
+    for word in words:
+        if word in bad_words:
+            continue
+        if word[0] is '@' or word[:2] is '.@':
+            continue
+        if word[:5] == 'http:':
+            continue
+        if word == 'RT':
+            return ''
+        out += ''.join([c for c in word if c.lower() in 'abcdefghijklmnopqrstuvwxyz0123456789 '])
+        out += ' '
+    return out
 
 #---Analyzes tweets for news events
 def analyze(tweets):
