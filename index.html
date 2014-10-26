@@ -7,16 +7,19 @@
         <meta charset="utf-8">
         <title>Simple map</title>
         <style>
-            html, body {
+            html, body, #map-canvas {
                 height: 100%;
                 margin: 0px;
                 padding: 0px;
 		background-color: #F5F5F5;
             }
-	    #map-canvas {
-		height: 65%;
-		margin-top: 15%;
-		padding: 0px;
+	    #header {
+		height: 75px;
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		background-color: black;
+		z-index: 20;
 	    }
         </style>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -99,6 +102,7 @@
         </script>
     </head>
     <body>
+	<div id="header"></div>
         <div id="map-canvas"></div>
     </body>
 </html>
