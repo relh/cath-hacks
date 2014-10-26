@@ -17,10 +17,12 @@ def clean(message):
             continue
         if word[0] is '@' or word[:2] is '.@':
             continue
-        if word.lower()[:5] == 'http:':
+        if word.lower()[:4] == 'http':
             continue
         if word == 'RT':
             return ''
+        if len(word) < 3:
+            continue
         out += ''.join([c for c in word if c.lower() in 'abcdefghijklmnopqrstuvwxyz0123456789 '])
         out += ' '
     return out.lower().strip()
