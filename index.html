@@ -21,66 +21,34 @@
 		background-color: black;
 		z-index: 20;
 	    }
-	    #header > h1 {
-		color: #FFB3B3;
-		margin-left: auto;
-		margin-right: auto;
-		width: 55px;
-	    }
         </style>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-       
-    </head>
-    <body>
-	<div id="header"><h1><i>Pulse</i></h1></div>
-        <div id="map-canvas"></div>
-	 <script>
+        <script>
             function initialize() {
-                var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
+                var markerTable = {};
+					
                 var lat=78;
                 var longi=37.5;
+                var myFirebaseRef = new Firebase("https://e-pulse.firebaseio.com/");
                 var myLatlng = new google.maps.LatLng(lat,longi);
                 var mapOptions = {
-                    zoom: 12,
+                    zoom: 4,
                     center: myLatlng
                 };
                 var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-                var contentString = '<blockquote class="twitter-tweet" lang="en"><p>Personally, I think America is ready for a woman to scale the White House fence.</p>&mdash; Conan O&#39;Brien (@ConanOBrien) <a href="https://twitter.com/ConanOBrien/status/526195522823286784">October 26, 2014</a></blockquote>'
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: 'TWIiiiiiiiTERT THINGS'
-                });
-                google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.open(map,marker)
-                });
-
-	    google.maps.event.addListener(infowindow, 'domready', function () {
-		! function (d, s, id) {
-		    var js, fjs = d.getElementsByTagName(s)[0];
-		    if (!d.getElementById(id)) {
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "//platform.twitter.com/widgets.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		    }
-		}(document, "script", "twitter-wjs");
-	    });
-
                 myFirebaseRef.on('child_added', function(snapshot) {
                     lat = snapshot.child("Lat").val();
                     longi = snapshot.child("Long").val();
                     keywords = snapshot.child("Keywords").val();
+                    timee = snapshot.child("Timestamp").val();
                     var temppos = new google.maps.LatLng(lat,longi);
                     var image = 'event.png';
                     var tempmarker = new google.maps.Marker( {
                         position: temppos,
                         map: map,
                         title: keywords,
-                        icon: image
+                        icon: image,
+                        zIndex: timee
                         });
                     
                     var tempinfo = new google.maps.InfoWindow({
@@ -92,6 +60,7 @@
 
                     markerTable[tempmarker]= eventToTweetArray(snapshot, map);
                 });
+                var interval = setInterval(function (){updater(markerTable)},10000);
             }
             function eventToTweetArray(snap, map) {
                 var tweetArray = [];
@@ -100,13 +69,15 @@
                         lat = tweet.child("Lat").val();
                         longi = tweet.child("Long").val();
                         keywords = tweet.child("Data").val();
+                        timee = tweet.child("Timestamp").val();
                         var temppos = new google.maps.LatLng(lat,longi);
                         var image = 'tweet.png';
                         var tempmarker = new google.maps.Marker( {
                             position: temppos,
                             map: map,
                             title: keywords,
-                            icon: image
+                            icon: image,
+                            zIndex: timee
                             });
                         console.log(temppos);
                         var tempinfo = new google.maps.InfoWindow({
@@ -120,8 +91,17 @@
                 });
                 return tweetArray; 
             } 
+            function updater(marker_list) {
+                for(var marker in marker_list) {
+                    if(marker
+                }
+            }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+    </head>
+    <body>
+	<div id="header"></div>
+        <div id="map-canvas"></div>
     </body>
 </html>
 
