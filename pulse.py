@@ -3,6 +3,7 @@ import canary
 import time
 import copy
 import json
+import traceback
 from threading import Thread
 from Queue import PriorityQueue
 
@@ -51,6 +52,8 @@ class Pulse:
             try:
                 timestamp = time.time()
                 twit = json.loads(data)
+                if 'coordinates' not in twit:
+                    return
                 try:
                     tweet = {}
                     tweet['timestamp'] = timestamp
@@ -59,9 +62,9 @@ class Pulse:
                     tweet['latlong'] = twit['coordinates']['coordinates'][::-1]#twitter returns these flipped
                     self.canary.queue.put((0-timestamp, tweet))
                 except Exception,e:
-                    print str(e)
+                    traceback.print_exc()
             except Exception,e:
-                print str(e)
+                traceback.print_exc()
         self.canary.onData = onData
         self.canary.startStream(self.geotags)#may not work???
 

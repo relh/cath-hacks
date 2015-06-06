@@ -1,6 +1,7 @@
 import time
 import datetime
 import random
+import traceback
 
 try:
     import tweepy
@@ -47,11 +48,11 @@ class Canary:
         print '\n'+str(data).strip()
         print 'DEFAULT ONDATA'
     def onError(self, error):
-        print '\n'+str(error).strip()
+        traceback.print_exc()
     def startStream(self, locations = ['pancake']):
         if self.stream.running:
             self.stream.disconnect()
-        self.stream.filter(locations = locations, async = True)
+        self.stream.filter(track = locations, locations = [-180,-90,180,90], async = True)
     def stopStream(self):
         self.stream.disconnect()
 

@@ -1,7 +1,0 @@
-event found:
-{'tweets': [{'timestamp': datetime.datetime(2014, 10, 22, 13, 1, 26), 'latlong': None, 'id': 524908387973472256}, {'timestamp': datetime.datetime(2014, 10, 22, 14, 24, 26), 'latlong': None, 'id': 524929275258884096}], 'keywords': [u'rain']}
-
-event found:
-{'tweets': [{'timestamp': datetime.datetime(2014, 10, 23, 22, 36, 51), 'latlong': {u'type': u'Point', u'coordinates': [-122.3802272, 47.66488878]}, 'id': 525415582381133824}], 'keywords': [u'rain']}
-
-done
