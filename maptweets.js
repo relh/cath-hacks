@@ -71,19 +71,22 @@ function eventToTweetArray(tweet, map) {
 
             google.maps.event.addListener(infowindow, 'domready', function () {
                     ! function (d, s, id) {
+                        if (d.getElementById(id)) {
+			  d.getElementById(id).parentNode.removeChild(d.getElementById(id));
+			}
                         var js, fjs = d.getElementsByTagName(s)[0];
-                 //       if (d.getElementById(id)) {
-		//		d.getElementById(id).parentNode.removeChild(d.getElementById(id));
-		//	}
                         js = d.createElement(s);
                         js.id = id;
                         js.src = "//platform.twitter.com/widgets.js";
-                       	js.parentNode.insertBefore(js, fjs);
+                       	fjs.parentNode.insertBefore(js, fjs);
                     }(document, "script", "twitter-wjs");
             });
-            google.maps.event.addListener(tempmarker, 'click', function() {
+            google.maps.event.addListener(tempmarker, 'mouseover', function() {
 		infowindow.open(map, tempmarker);
             });
+	    google.maps.event.addListener(tempmarker, 'mouseout', function() {
+		infowindow.close();
+	   });
             markerList.push(tempmarker);
 }
 
