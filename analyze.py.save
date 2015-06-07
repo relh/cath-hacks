@@ -1,13 +1,11 @@
 import copy
 import requests
-import json
+OBimport json
 import re
 import random
 import firebase
 
 keywords = open('keywords').read().splitlines()
-
-seen_tweets = set()
 
 #---Gets rid of extra punctuation, not latin characters, and urls
 def clean(message):
@@ -25,17 +23,14 @@ def clean(message):
             return ''
         if len(word) < 3:
             continue
-        out += ''.join([c if c.lower() in 'abcdefghijklmnopqrstuvwxyz0123456789' else ' ' for c in word])
+        out += ''.join([c for c in word if c.lower() in 'abcdefghijklmnopqrstuvwxyz0123456789 ./,;\'[]<>?:"{}~!@#$%^&*()_+=-`'])
         out += ' '
     return out.lower().strip()
 
 def good(tweet):
-    if tweet['id'] in seen_tweets:
-        return False
-    seen_tweets.add(tweet['id'])
     if tweet['text'][:2].lower() == 'rt':
         return False
-    if any([keyword.lower() in clean(tweet['text']).lower().split() for keyword in keywords]):
+    if any(keyword in tweet['text'] for keyword in keywords):
 	return True
     return False
 

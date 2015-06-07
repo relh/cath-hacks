@@ -19,7 +19,7 @@ function initialize() {
         longi = snapshot.child("Long").val();
         keywords = snapshot.child("Text").val();
         timee = snapshot.child("Timestamp").val();
-
+/*
         var temppos = new google.maps.LatLng(lat,longi);
         var image = 'event.png';
         var tempmarker = new google.maps.Marker( {
@@ -38,7 +38,7 @@ function initialize() {
         });
 
         markerList.push(tempmarker);
-
+*/
        eventToTweetArray(snapshot,map);
     });
 }
@@ -52,7 +52,7 @@ function eventToTweetArray(tweet, map) {
             tweet_html = '<blockquote class="twitter-tweet" lang="en"><p>text</p>(@usr) <a href="https://twitter.com/ust/status/' + tweet_html + '></a></blockquote><script async src="\/\/platform.twitter.com/widgets.js" charset="utf-8"><\/script>';
             time = tweet.child("Timestamp").val();
             var temppos = new google.maps.LatLng(lat,longi);
-            var image = 'tweet.png';
+            var image = 'light.png';
             var tempmarker = new google.maps.Marker( {
                 position: temppos,
                 map: map,
@@ -65,23 +65,24 @@ function eventToTweetArray(tweet, map) {
             wrapper.className = "map-popup";
             wrapper.style.height="20em";
             wrapper.style.width="45em";
-            var tempinfo = new google.maps.InfoWindow({
-                content: wrapper,
-            });
+	    var infowindow = new google.maps.InfoWindow({
+    		  content: wrapper, 
+            });	
 
-            google.maps.event.addListener(tempinfo, 'domready', function () {
+            google.maps.event.addListener(infowindow, 'domready', function () {
                     ! function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = "//platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
+                 //       if (d.getElementById(id)) {
+		//		d.getElementById(id).parentNode.removeChild(d.getElementById(id));
+		//	}
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//platform.twitter.com/widgets.js";
+                       	js.parentNode.insertBefore(js, fjs);
                     }(document, "script", "twitter-wjs");
             });
             google.maps.event.addListener(tempmarker, 'click', function() {
-                tempinfo.open(map,tempmarker)
+		infowindow.open(map, tempmarker);
             });
             markerList.push(tempmarker);
 }

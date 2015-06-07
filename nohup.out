@@ -1,434 +1,118 @@
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+WARNING:tornado.access:404 GET /holylight.png (69.181.28.231) 10.66ms
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
 Traceback (most recent call last):
-  File "start.py", line 2, in <module>
-    import pulse
-  File "/root/pulse-hacknc/pulse.py", line 1, in <module>
-    import analyze
-  File "/root/pulse-hacknc/analyze.py", line 7, in <module>
-    from data_analysis import prune
-  File "/root/pulse-hacknc/data_analysis.py", line 2, in <module>
-    from analyze import clean
-ImportError: cannot import name clean
-python: can't open file 'script.py': [Errno 2] No such file or directory
-python: can't open file 'script.py': [Errno 2] No such file or directory
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1309k  100 1309k    0     0  6873k      0 --:--:-- --:--:-- --:--:-- 6891k
-Downloading/unpacking pip
-Downloading/unpacking setuptools
-Installing collected packages: pip, setuptools
-Successfully installed pip setuptools
-Cleaning up...
-Downloading/unpacking tweepy
-  Downloading tweepy-2.3.0.tar.gz
-  Running setup.py (path:/tmp/pip_build_root/tweepy/setup.py) egg_info for package tweepy
-    
-Installing collected packages: tweepy
-  Running setup.py install for tweepy
-    
-Successfully installed tweepy
-Cleaning up...
-Requirement already satisfied (use --upgrade to upgrade): requests in /usr/lib/python2.7/dist-packages
-Cleaning up...
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType' object has no attribute '__getitem__'
-'NoneType207.244.72.201 - - [06/Jun/2015 01:20:52] "GET / HTTP/1.1" 200 -
-207.244.72.201 - - [06/Jun/2015 01:20:58] code 404, message File not found
-207.244.72.201 - - [06/Jun/2015 01:20:58] "GET /favicon.ico HTTP/1.1" 404 -
-173.11.116.129 - - [06/Jun/2015 01:21:26] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:21:27] code 404, message File not found
-173.11.116.129 - - [06/Jun/2015 01:21:27] "GET /favicon.ico HTTP/1.1" 404 -
-173.11.116.129 - - [06/Jun/2015 01:21:30] "GET /event.png HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:21:30] "GET /tweet.png HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:22:46] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:22:47] "GET /event.png HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:22:47] "GET /tweet.png HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:23:24] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:23:52] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:37:35] "GET / HTTP/1.1" 200 -
-207.244.72.201 - - [06/Jun/2015 01:44:50] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:49:14] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:51:26] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:52:13] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:52:15] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:53:05] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:53:07] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:53:40] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:53:43] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:54:18] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:54:19] "GET /cross.jpg HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:55:07] "GET / HTTP/1.1" 200 -
-173.11.116.129 - - [06/Jun/2015 01:55:08] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:57:23] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:57:39] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:57:40] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:06] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:20] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:20] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:21] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:28] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:29] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 02:58:29] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:02:12] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:02:13] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:02:23] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:02:23] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:08:14] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:08:14] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:08:15] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:18:40] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:18:40] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:23:35] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:23:35] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:25:27] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:25:27] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:27:40] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:27:40] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:30:56] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:30:57] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:31:59] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:32:00] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:36:31] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:36:33] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:36:53] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:37:04] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:39:33] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:39:33] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:39:36] "GET /event.png HTTP/1.1" 200 -
-173.252.115.88 - - [06/Jun/2015 03:45:15] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:47:46] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:47:56] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:57:03] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:57:03] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:57:03] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:58:27] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 03:59:40] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:01:29] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:02:25] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:02:32] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:02:33] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:03:17] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:04:06] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:04:24] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:04:33] "GET /event.png HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:04:33] "GET /tweet.png HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:07:38] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:07:38] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:08:27] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:08:27] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:08:29] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:09:06] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:09:26] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:09:26] "GET /cross.jpg HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:23:31] "GET / HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:23:31] "GET /maptweets.js HTTP/1.1" 200 -
-69.181.28.231 - - [06/Jun/2015 04:23:35] "GET /event.png HTTP/1.1" 200 -
-45.55.159.156 - - [06/Jun/2015 05:04:11] "GET / HTTP/1.1" 200 -
-123.125.71.114 - - [06/Jun/2015 08:42:40] code 404, message File not found
-123.125.71.114 - - [06/Jun/2015 08:42:40] "GET /robots.txt HTTP/1.1" 404 -
-220.181.108.83 - - [06/Jun/2015 08:44:47] "GET / HTTP/1.1" 200 -
-220.181.108.110 - - [06/Jun/2015 08:45:01] "GET /maptweets.js HTTP/1.1" 200 -
-108.222.71.73 - - [06/Jun/2015 10:44:04] "GET / HTTP/1.1" 200 -
-108.222.71.73 - - [06/Jun/2015 10:44:05] "GET /maptweets.js HTTP/1.1" 200 -
-108.222.71.73 - - [06/Jun/2015 10:44:07] "GET /cross.jpg HTTP/1.1" 200 -
-71.59.209.61 - - [06/Jun/2015 10:50:22] "GET / HTTP/1.1" 200 -
-71.59.209.61 - - [06/Jun/2015 10:50:22] "GET /maptweets.js HTTP/1.1" 200 -
-71.59.209.61 - - [06/Jun/2015 10:50:22] "GET /cross.jpg HTTP/1.1" 200 -
-71.59.209.61 - - [06/Jun/2015 10:50:26] "GET /event.png HTTP/1.1" 200 -
-99.122.50.187 - - [06/Jun/2015 10:59:25] "GET / HTTP/1.1" 200 -
-99.122.50.187 - - [06/Jun/2015 10:59:25] "GET /maptweets.js HTTP/1.1" 200 -
-99.122.50.187 - - [06/Jun/2015 10:59:26] "GET /cross.jpg HTTP/1.1" 200 -
-85.152.47.162 - - [06/Jun/2015 11:58:31] "GET / HTTP/1.1" 200 -
-85.152.47.162 - - [06/Jun/2015 11:58:32] "GET /maptweets.js HTTP/1.1" 200 -
-85.152.47.162 - - [06/Jun/2015 11:58:33] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:12:51] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:12:51] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:12:52] "GET /maptweets.js HTTP/1.1" 200 -
-69.252.193.129 - - [06/Jun/2015 13:12:52] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:12:52] "GET /maptweets.js?_fp980=0.9809292962308973 HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:14:22] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:14:40] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:14:40] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:16:11] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:16:31] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:16:31] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:16:49] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:16:50] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:16:50] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:17:22] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:17:22] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:17:23] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:17:44] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:18:01] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:18:01] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:18:03] "GET /event.png HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:19:08] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:19:08] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:19:09] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:20:17] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:20:18] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:21:07] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:21:07] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:21:07] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:21:56] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:21:57] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:23:31] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:23:32] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:24:00] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:24:00] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:24:10] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:24:21] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:24:21] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:24:22] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:25:04] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:25:05] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:25:41] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:26:26] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:26:26] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:30:08] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:30:09] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:31:42] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:33:18] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:34:07] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:34:08] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:34:08] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:34:44] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:34:44] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:34:44] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:35:12] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:35:13] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:35:58] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:35:58] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:35] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:35] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:46] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:46] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:55] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:55] "GET /event.png HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:36:55] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:37:04] "GET /event.png HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:39:07] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:39:08] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:02] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:02] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:03] "GET /cross.jpg HTTP/1.1" 200 -
-64.233.172.182 - - [06/Jun/2015 13:40:06] "GET / HTTP/1.1" 200 -
-64.233.172.174 - - [06/Jun/2015 13:40:06] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:06] "GET /maptweets.js HTTP/1.1" 200 -
-64.233.172.190 - - [06/Jun/2015 13:40:16] "GET / HTTP/1.1" 200 -
-64.233.172.190 - - [06/Jun/2015 13:40:16] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:18] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:32] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:40:33] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:41:19] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:42:23] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:42:23] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:42:24] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:42:27] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:47:53] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:48:03] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:49:25] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:49:48] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:50:34] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:50:35] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:50:35] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:50:37] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:51:47] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:52:35] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:52:42] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:52:42] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:52:43] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:52:52] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:04] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:14] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:14] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:40] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:56] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:57] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:53:57] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:56:08] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:56:54] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:56:54] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:56:54] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:57:09] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:58:02] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:59:22] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:59:24] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 13:59:24] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:00:09] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:00:19] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:01:03] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:01:16] "GET /tweet.png HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:01:23] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:01:23] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:01:25] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:02:07] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:02:07] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:02:17] "GET /cross.jpg HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:02:41] "GET / HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:02:41] "GET /maptweets.js HTTP/1.1" 200 -
-50.141.64.132 - - [06/Jun/2015 14:03:01] "GET /cross.jpg HTTP/1.1" 200 -
+  File "app.py", line 28, in <module>
+    run(host = '0.0.0.0', port = 80, server = 'tornado', debug = True)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 3117, in run
+    server.run(app)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 2850, in run
+    server.listen(port=self.port,address=self.host)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/tcpserver.py", line 126, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/netutil.py", line 187, in bind_sockets
+    sock.bind(sockaddr)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Traceback (most recent call last):
+  File "app.py", line 28, in <module>
+    run(host = '0.0.0.0', port = 80, server = 'tornado', debug = True)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 3117, in run
+    server.run(app)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 2850, in run
+    server.listen(port=self.port,address=self.host)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/tcpserver.py", line 126, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/netutil.py", line 187, in bind_sockets
+    sock.bind(sockaddr)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Traceback (most recent call last):
+  File "app.py", line 28, in <module>
+    run(host = '0.0.0.0', port = 80, server = 'tornado', debug = True)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 3117, in run
+    server.run(app)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 2850, in run
+    server.listen(port=self.port,address=self.host)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/tcpserver.py", line 126, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/netutil.py", line 187, in bind_sockets
+    sock.bind(sockaddr)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Traceback (most recent call last):
+  File "app.py", line 28, in <module>
+    run(host = '0.0.0.0', port = 80, server = 'tornado', debug = True)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 3117, in run
+    server.run(app)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 2850, in run
+    server.listen(port=self.port,address=self.host)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/tcpserver.py", line 126, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/netutil.py", line 187, in bind_sockets
+    sock.bind(sockaddr)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+WARNING:tornado.access:404 GET /holy.jpg (50.141.67.139) 2.63ms
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+WARNING:tornado.access:404 CONNECT google.com:443 (141.212.122.82) 6.49ms
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Traceback (most recent call last):
+  File "app.py", line 28, in <module>
+    run(host = '0.0.0.0', port = 80, server = 'tornado', debug = True)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 3117, in run
+    server.run(app)
+  File "/usr/local/lib/python2.7/dist-packages/bottle.py", line 2850, in run
+    server.listen(port=self.port,address=self.host)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/tcpserver.py", line 126, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/netutil.py", line 187, in bind_sockets
+    sock.bind(sockaddr)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+WARNING:tornado.access:404 GET /light.png (50.141.67.139) 8.80ms
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+Bottle v0.12.8 server starting up (using TornadoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+

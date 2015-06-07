@@ -52,7 +52,7 @@ class Canary:
     def startStream(self, locations = ['pancake']):
         if self.stream.running:
             self.stream.disconnect()
-        self.stream.filter(track = locations, locations = [-180,-90,180,90], async = True)
+        self.stream.filter(track = locations, async = True)
     def stopStream(self):
         self.stream.disconnect()
 

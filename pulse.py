@@ -52,7 +52,7 @@ class Pulse:
             try:
                 timestamp = time.time()
                 twit = json.loads(data)
-                if 'coordinates' not in twit:
+                if 'coordinates' not in twit or not twit['coordinates']:
                     return
                 try:
                     tweet = {}
