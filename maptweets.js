@@ -67,6 +67,9 @@ function eventToTweetArray(tweet, map) {
             wrapper.style.width="45em";
 	    var infowindow = new google.maps.InfoWindow({
     		  content: wrapper, 
+		  maxHeight: 100,
+	          maxWidth: 500,
+		  autoScroll: true,
             });	
 
             google.maps.event.addListener(infowindow, 'domready', function () {
