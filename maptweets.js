@@ -4,8 +4,8 @@ var time;
 
 function initialize() {
     time = new Date().getTime()/1000;
-    var lat=78;
-    var longi=37.5;
+    var lat=34.6;
+    var longi=-40.6;
     var myFirebaseRef = new Firebase("https://prepel.firebaseio.com/"); //events");
     var myLatlng = new google.maps.LatLng(lat,longi);
     var mapOptions = {
